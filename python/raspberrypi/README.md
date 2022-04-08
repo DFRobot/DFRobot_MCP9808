@@ -6,7 +6,7 @@ The MCP9808 is one of the more accurate temperature sensing options, with a typi
 ![效果图](../../resources/images/SEN0435.jpg)
 
 
-## Product Link(https://www.dfrobot.com)
+## Product Link(https://www.dfrobot.com/product-2546.html)
 
     SKU:SEN0435
 

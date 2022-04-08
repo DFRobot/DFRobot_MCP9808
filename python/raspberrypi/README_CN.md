@@ -5,7 +5,7 @@ MCP9808 数字温度传感器可检测-40°C和+125°C之间的温度,提供±0.
 ![正反面svg效果图](../../resources/images/SEN0435.jpg)
 
 
-## 产品链接(https://www.dfrobot.com.cn/goods-2692.html)
+## 产品链接(https://www.dfrobot.com.cn/goods-3475.html)
 
     SKU:SEN0435
 

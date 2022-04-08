@@ -127,10 +127,10 @@ public:
    * @fn setResolution
    * @brief Set resolution of the temperature sensor, the accuracy of the acquired temp is different in different resolution
    * @param resolution
-   * @n     RESOLUTION_0_5     // The decimal part of the obtained temp is a multiple of 0.5     e.g. 0.5°C, 1.0°C, 1.5°C
-   * @n     RESOLUTION_0_25    // The decimal part of the obtained temp is a multiple of 0.25    e.g. 0.25°C, 0.50°C, 0.75°C
-   * @n     RESOLUTION_0_125   // The decimal part of the obtained temp is a multiple of 0.125   e.g. 0.125°C, 0.250°C, 0.375°C
-   * @n     RESOLUTION_0_0625  // The decimal part of the obtained temp is a multiple of 0.0625  e.g. 0.0625°C, 0.1250°C, 0.1875°C
+   * @n     RESOLUTION_0_5      The decimal part of the obtained temp is a multiple of 0.5     e.g. 0.5°C, 1.0°C, 1.5°C
+   * @n     RESOLUTION_0_25     The decimal part of the obtained temp is a multiple of 0.25    e.g. 0.25°C, 0.50°C, 0.75°C
+   * @n     RESOLUTION_0_125    The decimal part of the obtained temp is a multiple of 0.125   e.g. 0.125°C, 0.250°C, 0.375°C
+   * @n     RESOLUTION_0_0625   The decimal part of the obtained temp is a multiple of 0.0625  e.g. 0.0625°C, 0.1250°C, 0.1875°C
    * @return The set status
    * @retval true is set successfully
    * @retval false is set parameter error
@@ -141,10 +141,10 @@ public:
    * @fn getResolution
    * @brief Get resolution of the temperature sensor, the accuracy of the acquired temp is different in different resolution
    * @return resolution
-   * @retval RESOLUTION_0_5     // The decimal part of the obtained temp is a multiple of 0.5     e.g. 0.5°C, 1.0°C, 1.5°C
-   * @retval RESOLUTION_0_25    // The decimal part of the obtained temp is a multiple of 0.25    e.g. 0.25°C, 0.50°C, 0.75°C
-   * @retval RESOLUTION_0_125   // The decimal part of the obtained temp is a multiple of 0.125   e.g. 0.125°C, 0.250°C, 0.375°C
-   * @retval RESOLUTION_0_0625  // The decimal part of the obtained temp is a multiple of 0.0625  e.g. 0.0625°C, 0.1250°C, 0.1875°C
+   * @retval RESOLUTION_0_5      The decimal part of the obtained temp is a multiple of 0.5     e.g. 0.5°C, 1.0°C, 1.5°C
+   * @retval RESOLUTION_0_25     The decimal part of the obtained temp is a multiple of 0.25    e.g. 0.25°C, 0.50°C, 0.75°C
+   * @retval RESOLUTION_0_125    The decimal part of the obtained temp is a multiple of 0.125   e.g. 0.125°C, 0.250°C, 0.375°C
+   * @retval RESOLUTION_0_0625   The decimal part of the obtained temp is a multiple of 0.0625  e.g. 0.0625°C, 0.1250°C, 0.1875°C
    */
   uint8_t getResolution(void);
 
@@ -159,9 +159,9 @@ public:
    * @fn getComparatorState
    * @brief Get the current comparator status and temp data, which works only in comparator mode
    * @return Struct for storing the current data
-   * @n      temperate        // Current temp
-   * @n      state            // Character string of the comparator status, compare the current temp with the upper threshold, lower threshold, and threshold value
-   * @n      value            // Value of the comparator status, explained as follows
+   * @n      temperate         Current temp
+   * @n      state             Character string of the comparator status, compare the current temp with the upper threshold, lower threshold, and threshold value
+   * @n      value             Value of the comparator status, explained as follows
    * @n      TA for current temp, TCRIT for critical temp, TUPPER for maximum temp, TLOWER for minimum temp
    * @n      1 for TA ≥ TCRIT, TA > TUPPER, TA < TLOWER
    * @n      0 for TA < TCRIT, TA ≤ TUPPER, TA ≥ TLOWER
@@ -177,10 +177,10 @@ public:
    * @fn setLockState
    * @brief Set lock mode or unlock, prevent wrong operations that may change upper limit, lower limit and threshold value, and unlock only by power-off reset after locking
    * @param lock
-   * @n     CRIT_LOCK       // Lock threshold value, which is not allowed to be changed
-   * @n     WIN_LOCK        // Lock upper and lower thresholds, which are not allowed to be changed
-   * @n     CRIT_WIN_LOCK   // Lock threshold value, upper and lower limit, which are not allowed to be changed
-   * @n     NO_LOCK         // No locking of threshold value, upper and lower limit
+   * @n     CRIT_LOCK        Lock threshold value, which is not allowed to be changed
+   * @n     WIN_LOCK         Lock upper and lower thresholds, which are not allowed to be changed
+   * @n     CRIT_WIN_LOCK    Lock threshold value, upper and lower limit, which are not allowed to be changed
+   * @n     NO_LOCK          No locking of threshold value, upper and lower limit
    * @return bool type return the set status
    * @retval true  is set successfully
    * @retval false is set parameter error
@@ -191,10 +191,10 @@ public:
    * @fn getLockState
    * @brief Get locking status, to determine if upper limit, lower limit, and threshold can be changed
    * @return Locking status
-   * @retval CRIT_LOCK       // Lock threshold value, which is not allowed to be changed
-   * @retval WIN_LOCK        // Lock upper and lower thresholds, which are not allowed to be changed
-   * @retval CRIT_WIN_LOCK   // Lock threshold and the window at the same time, upper limit, lower limit, and threshold are all not allowed to be changed
-   * @retval NO_LOCK         // No locking, threshold value, upper and lower limit are all can be changed
+   * @retval CRIT_LOCK        Lock threshold value, which is not allowed to be changed
+   * @retval WIN_LOCK         Lock upper and lower thresholds, which are not allowed to be changed
+   * @retval CRIT_WIN_LOCK    Lock threshold and the window at the same time, upper limit, lower limit, and threshold are all not allowed to be changed
+   * @retval NO_LOCK          No locking, threshold value, upper and lower limit are all can be changed
    */
   uint8_t getLockState(void);
 
@@ -205,10 +205,10 @@ public:
    * @details  For example: maximum temp is 30.0°C, hysteresis temp is +1.5°C, the current temp is 35°C and ALE level has flipped, 
    * @details  the temp must reach 30-1.5=28.5°C before restoring ALE level
    * @param mode
-   * @n     HYSTERESIS_0_0        // No hysteresis, there is respond when reaching the specified temp
-   * @n     HYSTERESIS_1_5        // 1.5℃ lag from hot to cold
-   * @n     HYSTERESIS_3_0        // 3.0℃ lag from hot to cold
-   * @n     HYSTERESIS_6_0        // 6.0℃ lag from hot to cold
+   * @n     HYSTERESIS_0_0        No hysteresis, there is respond when reaching the specified temp
+   * @n     HYSTERESIS_1_5        1.5℃ lag from hot to cold
+   * @n     HYSTERESIS_3_0        3.0℃ lag from hot to cold
+   * @n     HYSTERESIS_6_0        6.0℃ lag from hot to cold
    * @return uint8_t type
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -220,10 +220,10 @@ public:
    * @fn getAlertHysteresis
    * @brief Get hysteresis temp
    * @return hysteresis type
-   * @retval HYSTERESIS_0_0        // Temp hysteresis range +0.0℃
-   * @retval HYSTERESIS_1_5        // Temp hysteresis range +1.5℃
-   * @retval HYSTERESIS_3_0        // Temp hysteresis range +3.0℃
-   * @retval HYSTERESIS_6_0        // Temp hysteresis range +6.0℃
+   * @retval HYSTERESIS_0_0        Temp hysteresis range +0.0℃
+   * @retval HYSTERESIS_1_5        Temp hysteresis range +1.5℃
+   * @retval HYSTERESIS_3_0        Temp hysteresis range +3.0℃
+   * @retval HYSTERESIS_6_0        Temp hysteresis range +6.0℃
    */
   uint8_t getAlertHysteresis(void);
 
@@ -232,8 +232,8 @@ public:
    * @brief Set pin ALE polarity, high polarity: pin ALE is active on high, the default is low level, which turns to high when alert occurs.
    * @details                 low polarity: pin ALE is active on low, the default is high level, which turns to low when alert occurs.
    * @param polarity
-   * @n     POLARITY_HIGH         // pin ALE is active on high
-   * @n     POLARITY_LOW          // pin ALE is active on low
+   * @n     POLARITY_HIGH          pin ALE is active on high
+   * @n     POLARITY_LOW           pin ALE is active on low
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -246,8 +246,8 @@ public:
    * @brief Get pin ALE polarity, high polarity: pin ALE is active on high, the default is low level, which turns to high when alert occurs.
    * @details                     low polarity: pin ALE is active on low, the default is high level, which turns to low when alert occurs.
    * @return polarity
-   * @retval POLARITY_HIGH         // pin ALE is active on high
-   * @retval POLARITY_LOW          // pin ALE is active on low
+   * @retval POLARITY_HIGH          pin ALE is active on high
+   * @retval POLARITY_LOW           pin ALE is active on low
    */
   uint8_t getPolarityState(void);
 
@@ -255,11 +255,11 @@ public:
    * @fn setAlertOutputMode
    * @brief Set alert output mode, clearing interrupt is not required in comparator output mode, but required in interrupt mode
    * @param mode:
-   * @n     COMPARATOR_OUTPUT_MODE           // clearing interrupt is not required in comparator output mode, 
+   * @n     COMPARATOR_OUTPUT_MODE           clearing interrupt is not required in comparator output mode, 
    * @n         For example: set pin ALE to be active on low, when the temp exceeds the upper limit alert temp, pin ALE level turns from high to low; when it's below the upper but above the lower limit, pin ALE level turns back to high
-   * @n     INTERRPUT_OUTPUT_MODE            // clearing interrupt is required in interrupt mode, when an alert occurs, the interrupt keep existing if it's not cleared, triggering interrupt mode indicates one status to another, 
+   * @n     INTERRPUT_OUTPUT_MODE            clearing interrupt is required in interrupt mode, when an alert occurs, the interrupt keep existing if it's not cleared, triggering interrupt mode indicates one status to another, 
    * @n         For example, set lower threshold to be 20°C, upper threshold 25°C, and threshold 30°C, no interrupt occurs when temp is below 20°C; when temp exceeds 25°C, interrupt occurs and pin ALE jump, the interrupt should be cleared at the time and pin ALE is restored; in the special case, when pin ALE is above the critical temp of 30°C, the interrupt mode and clearing interrupt are both invalid, the interrupt mode will be restored only when the temp drops below 30 degrees.
-   * @n     DISABLE_OUTPUT_MODE              // After disabling output mode, no alert occurs and pin ALE is invalid
+   * @n     DISABLE_OUTPUT_MODE              After disabling output mode, no alert occurs and pin ALE is invalid
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -271,9 +271,9 @@ public:
    * @fn getAlertOutputMode
    * @brief Get alert output mode
    * @return mode
-   * @retval COMPARATOR_OUTPUT_MODE           // Comparator output mode
-   * @retval INTERRPUT_OUTPUT_MODE            // Interrupt output mode
-   * @retval DISABLE_OUTPUT_MODE              // Disable output mode
+   * @retval COMPARATOR_OUTPUT_MODE           Comparator output mode
+   * @retval INTERRPUT_OUTPUT_MODE            Interrupt output mode
+   * @retval DISABLE_OUTPUT_MODE              Disable output mode
    */
   uint8_t getAlertOutputMode(void);
 
@@ -281,8 +281,8 @@ public:
    * @fn setAlertResponseMode
    * @brief Set alert response mode, respond to upper & lower limits and threshold; or only respond to threshold, which is inapplicable to interrupt mode
    * @param mode
-   * @n     UPPER_LOWER_CRIT_RESPONSE         // respond to upper/lower limits and threshold 
-   * @n     ONLY_CRIT_RESPONSE                // disable upper/lower limits response, only enable threshold response
+   * @n     UPPER_LOWER_CRIT_RESPONSE         respond to upper/lower limits and threshold 
+   * @n     ONLY_CRIT_RESPONSE                disable upper/lower limits response, only enable threshold response
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -294,8 +294,8 @@ public:
    * @fn getAlertResponseMode
    * @brief Get interrupt response mode
    * @return mode
-   * @retval UPPER_LOWER_CRIT_RESPONSE         // respond to upper/lower limits and threshold
-   * @retval ONLY_CRIT_RESPONSE                // disable upper/lower limits response, only enable threshold response
+   * @retval UPPER_LOWER_CRIT_RESPONSE         respond to upper/lower limits and threshold
+   * @retval ONLY_CRIT_RESPONSE                disable upper/lower limits response, only enable threshold response
    */
   uint8_t getAlertResponseMode(void);
 
@@ -305,13 +305,13 @@ public:
    * @details Responding interrupt when the temp is above the upper limit, below the lower limit and above the threshold
    * @details The critical temp must be above the upper limit
    * @details the upper limit temp must be 2℃ higher than the lower limit temp 
-   * @param crit  // Temp threshold, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
-   * @param upper // Upper limit temp, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
-   * @param lower // Lower limit temp, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
+   * @param crit   Temp threshold, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
+   * @param upper  Upper limit temp, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
+   * @param lower  Lower limit temp, up to two decimal places, automatically processed to multiples of 0.25, range is from -40 to +125℃
    * @return state
    * @retval 0x00 is set successfully
-   * @retval 0xFD  // Upper limit temp is below lower limit, or (upper limit temp - lower limit temp < 2)
-   * @retval 0xFE  // Upper limit temp is below threshold
+   * @retval 0xFD  Upper limit temp is below lower limit, or (upper limit temp - lower limit temp < 2)
+   * @retval 0xFE  Upper limit temp is below threshold
    * @retval 0xFF is register lock, not allowed to be modified
    */
   uint8_t setThreshold(float crit, float upper, float lower);
@@ -337,8 +337,8 @@ protected:
    * @brief Set power mode, power up mode: in this mode, the register can be accessed and the temp can be obtained normally.
    * @details            Low power mode: temp measurement stop and the register can be read or written, but bus activity will cause higher power consumption
    * @param mode
-   * @n     POWER_UP_MODE         // power up mode
-   * @n     LOW_POWER_MODE        // low power mode
+   * @n     POWER_UP_MODE         power up mode
+   * @n     LOW_POWER_MODE        low power mode
    * @return The set status
    * @retval true  is set success
    * @retval false is register lock, not allowed to be modified
@@ -349,8 +349,8 @@ protected:
    * @fn setAlertEnable
    * @brief Enable or disable alert mode, after enabling it, pin ALE will jump when satisfying the alert condition; if disabling it, pin ALE has no response.
    * @param mode
-   * @n     ENABLE_ALERT           // after enabling alert mode, pin ALE will jump when satisfying the alert condition
-   * @n     DISABLE_ALERT          // when disabling alert mode, pin ALE has no response
+   * @n     ENABLE_ALERT           after enabling alert mode, pin ALE will jump when satisfying the alert condition
+   * @n     DISABLE_ALERT          when disabling alert mode, pin ALE has no response
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -362,8 +362,8 @@ protected:
    * @fn getAlertEnableState
    * @brief Get the alert mode status, enable alert mode or disable it
    * @return mode
-   * @retval ENABLE_ALERT           // enable alert mode
-   * @retval DISABLE_ALERT          // disable alert mode
+   * @retval ENABLE_ALERT            enable alert mode
+   * @retval DISABLE_ALERT           disable alert mode
    */
   uint8_t getAlertEnableState(void);
 
@@ -378,8 +378,8 @@ protected:
    * @fn getManufacturerID
    * @brief get manufacturer id
    * @return manufacturer id
-   * @retval true               // manufacturer id is true
-   * @retval false              // manufacturer id is false
+   * @retval true                manufacturer id is true
+   * @retval false               manufacturer id is false
    */
   bool getManufacturerID(void);
 
@@ -387,8 +387,8 @@ protected:
    * @fn getDeviceID
    * @brief get device id
    * @return device id
-   * @retval true               // device id is true
-   * @retval false              // device id is false
+   * @retval true                device id is true
+   * @retval false               device id is false
    */
   bool getDeviceID(void);
 

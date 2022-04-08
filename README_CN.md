@@ -5,7 +5,7 @@
 
 ![正反面svg效果图](resources/images/SEN0435.jpg)
 
-## 产品链接(https://www.dfrobot.com.cn/goods-2692.html)
+## 产品链接(https://www.dfrobot.com.cn/goods-3475.html)
 
     SKU:SEN0435
 
@@ -69,10 +69,10 @@
    * @fn setResolution
    * @brief 设置温度传感器的分辨率, 不同的分辨率, 获取的温度的精度不同
    * @param resolution
-   * @n     RESOLUTION_0_5     // 获取温度的小数部分为0.5的倍数     如0.5℃ 、1.0℃、1.5℃
-   * @n     RESOLUTION_0_25    // 获取温度的小数部分为0.25的倍数    如0.25℃、0.50℃、0.75℃
-   * @n     RESOLUTION_0_125   // 获取温度的小数部分为0.125的倍数   如0.125℃、0.250℃、0.375℃
-   * @n     RESOLUTION_0_0625  // 获取温度的小数部分为0.0625的倍数  如0.0625℃、0.1250℃、0.1875℃
+   * @n     RESOLUTION_0_5      获取温度的小数部分为0.5的倍数     如0.5℃ 、1.0℃、1.5℃
+   * @n     RESOLUTION_0_25     获取温度的小数部分为0.25的倍数    如0.25℃、0.50℃、0.75℃
+   * @n     RESOLUTION_0_125    获取温度的小数部分为0.125的倍数   如0.125℃、0.250℃、0.375℃
+   * @n     RESOLUTION_0_0625   获取温度的小数部分为0.0625的倍数  如0.0625℃、0.1250℃、0.1875℃
    * @return 设置的状态
    * @retval true is set successfully
    * @retval false is set parameter error
@@ -83,10 +83,10 @@
    * @fn getResolution
    * @brief 获取温度传感器的分辨率 ,不同的分辨率, 获取的温度的精度不同
    * @return resolution
-   * @retval RESOLUTION_0_5     // 获取温度的小数部分为0.5的倍数     如0.5℃ 、1.0℃、1.5℃
-   * @retval RESOLUTION_0_25    // 获取温度的小数部分为0.25的倍数    如0.25℃、0.50℃、0.75℃
-   * @retval RESOLUTION_0_125   // 获取温度的小数部分为0.125的倍数   如0.125℃、0.250℃、0.375℃
-   * @retval RESOLUTION_0_0625  // 获取温度的小数部分为0.0625的倍数  如0.0625℃、0.1250℃、0.1875℃
+   * @retval RESOLUTION_0_5      获取温度的小数部分为0.5的倍数     如0.5℃ 、1.0℃、1.5℃
+   * @retval RESOLUTION_0_25     获取温度的小数部分为0.25的倍数    如0.25℃、0.50℃、0.75℃
+   * @retval RESOLUTION_0_125    获取温度的小数部分为0.125的倍数   如0.125℃、0.250℃、0.375℃
+   * @retval RESOLUTION_0_0625   获取温度的小数部分为0.0625的倍数  如0.0625℃、0.1250℃、0.1875℃
    */
   uint8_t getResolution(void);
 
@@ -101,9 +101,9 @@
    * @fn getComparatorState
    * @brief 获取当前比较器的状态和温度数据, 只有在比较器模式下有效
    * @return 存放当前数据的结构体
-   * @n      temperate        // 当前温度
-   * @n      state            // 比较器状态的字符串,比较当前温度和上限阈值,下限阈,和临界值的关系
-   * @n      value            // 比较器的状态的值,解释如下
+   * @n      temperate         当前温度
+   * @n      state             比较器状态的字符串,比较当前温度和上限阈值,下限阈,和临界值的关系
+   * @n      value             比较器的状态的值,解释如下
    * @n      TA 代表当前温度, TCRIT代表临界温度, TUPPER代表上限温度, TLOWER代表下限温度
    * @n      1 代表 TA ≥ TCRIT, TA > TUPPER, TA < TLOWER
    * @n      0 代表 TA < TCRIT, TA ≤ TUPPER, TA ≥ TLOWER
@@ -119,10 +119,10 @@
    * @fn setLockState
    * @brief 设置锁定模式或解锁, 防止错误操作更改上限、下限、临界值的大小, 锁定后只能通过断电复位解除锁定
    * @param lock
-   * @n     CRIT_LOCK       // 锁定临界值, 临界值的阈值不允许被修改
-   * @n     WIN_LOCK        // 锁定上限下限, 上限下限的阈值不允许被修改
-   * @n     CRIT_WIN_LOCK   // 锁定临界值和上限下限, 上限下限和临界值的数据都不允许被修改
-   * @n     NO_LOCK         // 不锁定上限下限和临界值
+   * @n     CRIT_LOCK        锁定临界值, 临界值的阈值不允许被修改
+   * @n     WIN_LOCK         锁定上限下限, 上限下限的阈值不允许被修改
+   * @n     CRIT_WIN_LOCK    锁定临界值和上限下限, 上限下限和临界值的数据都不允许被修改
+   * @n     NO_LOCK          不锁定上限下限和临界值
    * @return bool类型返回设置的状态
    * @retval true  is set successfully
    * @retval false is set parameter error
@@ -133,10 +133,10 @@
    * @fn getLockState
    * @brief 获取锁定的状态, 来判断是否可以修改上限下限和临界值的阈值
    * @return 锁定的状态
-   * @retval CRIT_LOCK       // 临界值锁定, 临界值的阈值不允许被修改
-   * @retval WIN_LOCK        // 上限下限锁定, 上限下限的阈值不允许被修改
-   * @retval CRIT_WIN_LOCK   // 临界值和窗口同时锁定, 上限下限和临界值的数据都不允许被修改
-   * @retval NO_LOCK         // 没有锁定, 上限下限和临界值的阈值都可以被修改
+   * @retval CRIT_LOCK        临界值锁定, 临界值的阈值不允许被修改
+   * @retval WIN_LOCK         上限下限锁定, 上限下限的阈值不允许被修改
+   * @retval CRIT_WIN_LOCK    临界值和窗口同时锁定, 上限下限和临界值的数据都不允许被修改
+   * @retval NO_LOCK          没有锁定, 上限下限和临界值的阈值都可以被修改
    */
   uint8_t getLockState(void);
 
@@ -147,10 +147,10 @@
    * @details  例如:温度上限为30.0度, 滞后温度为+1.5度, 当前是35度ALE已经产生电平翻转, 
    * @details  要想ALE恢复电平, 必须达到30-1.5(28.5)度, ALE引脚才能恢复电平
    * @param mode
-   * @n     HYSTERESIS_0_0        // 没有滞后, 就是到达指定温度就响应
-   * @n     HYSTERESIS_1_5        // 从热至冷要滞后1.5℃
-   * @n     HYSTERESIS_3_0        // 从热至冷要滞后3.0℃
-   * @n     HYSTERESIS_6_0        // 从热至冷要滞后6.0℃
+   * @n     HYSTERESIS_0_0         没有滞后, 就是到达指定温度就响应
+   * @n     HYSTERESIS_1_5         从热至冷要滞后1.5℃
+   * @n     HYSTERESIS_3_0         从热至冷要滞后3.0℃
+   * @n     HYSTERESIS_6_0         从热至冷要滞后6.0℃
    * @return uint8_t 类型
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -162,10 +162,10 @@
    * @fn getAlertHysteresis
    * @brief 获取滞后的温度
    * @return hysteresis 类型
-   * @retval HYSTERESIS_0_0        // 温度滞后范围为 +0.0℃
-   * @retval HYSTERESIS_1_5        // 温度滞后范围为 +1.5℃
-   * @retval HYSTERESIS_3_0        // 温度滞后范围为 +3.0℃
-   * @retval HYSTERESIS_6_0        // 温度滞后范围为 +6.0℃
+   * @retval HYSTERESIS_0_0         温度滞后范围为 +0.0℃
+   * @retval HYSTERESIS_1_5         温度滞后范围为 +1.5℃
+   * @retval HYSTERESIS_3_0         温度滞后范围为 +3.0℃
+   * @retval HYSTERESIS_6_0         温度滞后范围为 +6.0℃
    */
   uint8_t getAlertHysteresis(void);
 
@@ -174,8 +174,8 @@
    * @brief 设置ALE引脚的极性, 引脚极性为高:ALE引脚高电平为活动电平, 默认为低电平, 产生报警后ALE为高电平
    * @details                 引脚极性为低:ALE引脚低极性为活动电平, 默认为高电平, 产生报警后ALE为低电平
    * @param polarity
-   * @n     POLARITY_HIGH         // ALE引脚高电平为活动电平
-   * @n     POLARITY_LOW          // ALE引脚低极性为活动电平
+   * @n     POLARITY_HIGH          ALE引脚高电平为活动电平
+   * @n     POLARITY_LOW           ALE引脚低极性为活动电平
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -188,8 +188,8 @@
    * @brief 获取ALE引脚的极性状态, 引脚极性为高:ALE引脚高电平为活动电平, 默认为低电平, 产生报警后ALE为高电平
    * @details                     引脚极性为低:ALE引脚低极性为活动电平, 默认为高电平, 产生报警后ALE为低电平
    * @return polarity
-   * @retval POLARITY_HIGH         // ALE引脚高电平为活动电平
-   * @retval POLARITY_LOW          // ALE引脚低极性为活动电平
+   * @retval POLARITY_HIGH          ALE引脚高电平为活动电平
+   * @retval POLARITY_LOW           ALE引脚低极性为活动电平
    */
   uint8_t getPolarityState(void);
 
@@ -197,11 +197,11 @@
    * @fn setAlertOutputMode
    * @brief 设置警报输出的模式, 比较器输出模式不需要清除中断, 中断模式需要清除中断
    * @param mode:
-   * @n     COMPARATOR_OUTPUT_MODE           // 比较器输出模式不需要清除中断, 
+   * @n     COMPARATOR_OUTPUT_MODE            比较器输出模式不需要清除中断, 
    * @n         例如:设置ALE引脚为低电平活动,当超过上限警报的温度时, ALE引脚从高电平到低电平, 当温度低于上限但高于下限时, ALE引脚恢复高电平
-   * @n     INTERRPUT_OUTPUT_MODE            // 中断输出模式需要清除中断, 当产生警报时, 如果不清除中断中断一直存在, 中断模式的触发, 是从一种状态变为另一种状态, 
+   * @n     INTERRPUT_OUTPUT_MODE             中断输出模式需要清除中断, 当产生警报时, 如果不清除中断中断一直存在, 中断模式的触发, 是从一种状态变为另一种状态, 
    * @n         例如:设置了下限阈值20度, 上限阈值25度, 临界阈值30度, 当温度一直低于20度时不产生中断, 当温度超过25度时才产生中断, ALE引脚跳变, 此时应该清空中断, ALE引脚恢复, 特殊情况, 当ALE引脚大于临界温度30度时, 中断模式失效, 清空中断也失效, 必须等温度降到30度以下, 才恢复中断模式
-   * @n     DISABLE_OUTPUT_MODE              // 禁止输出模式后不产生警报,ALE引脚失效
+   * @n     DISABLE_OUTPUT_MODE               禁止输出模式后不产生警报,ALE引脚失效
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -213,9 +213,9 @@
    * @fn getAlertOutputMode
    * @brief 获取警报输出的模式
    * @return mode
-   * @retval COMPARATOR_OUTPUT_MODE           // 比较器输出模式
-   * @retval INTERRPUT_OUTPUT_MODE            // 中断输出模式
-   * @retval DISABLE_OUTPUT_MODE              // 禁止输出模式
+   * @retval COMPARATOR_OUTPUT_MODE            比较器输出模式
+   * @retval INTERRPUT_OUTPUT_MODE             中断输出模式
+   * @retval DISABLE_OUTPUT_MODE               禁止输出模式
    */
   uint8_t getAlertOutputMode(void);
 
@@ -223,8 +223,8 @@
    * @fn setAlertResponseMode
    * @brief 设置响应模式, 响应上限下限和临界值, 或者只响应临界值, 只响应临界值不适用于中断模式
    * @param mode
-   * @n     UPPER_LOWER_CRIT_RESPONSE         // 上限/下线和临界值 都响应, 
-   * @n     ONLY_CRIT_RESPONSE                // 禁止上限下限响应, 只有临界值响应
+   * @n     UPPER_LOWER_CRIT_RESPONSE          上限/下线和临界值 都响应, 
+   * @n     ONLY_CRIT_RESPONSE                 禁止上限下限响应, 只有临界值响应
    * @return state
    * @retval 0x00 is set successfully
    * @retval 0xFE is set parameter error
@@ -236,8 +236,8 @@
    * @fn getAlertResponseMode
    * @brief 获取中断响应的模式
    * @return mode
-   * @retval UPPER_LOWER_CRIT_RESPONSE         // 上限/下线和临界值 都响应
-   * @retval ONLY_CRIT_RESPONSE                // 禁止上限下限响应, 只有临界值响应
+   * @retval UPPER_LOWER_CRIT_RESPONSE          上限/下线和临界值 都响应
+   * @retval ONLY_CRIT_RESPONSE                 禁止上限下限响应, 只有临界值响应
    */
   uint8_t getAlertResponseMode(void);
 
@@ -247,13 +247,13 @@
    * @details 高于上限温度和低于下限温度和高于临界值响应中断
    * @details 临界值温度必须大于上限温度
    * @details 上限温度必须大于下限温度 2摄氏度
-   * @param crit  // 温度临界值, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
-   * @param upper // 温度上限, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
-   * @param lower // 温度下限, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
+   * @param crit   温度临界值, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
+   * @param upper  温度上限, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
+   * @param lower  温度下限, 最多两位小数, 自动处理成0.25的倍数, 范围为-40 到 +125度
    * @return state
    * @retval 0x00 is set successfully
-   * @retval 0xFD  // 温度上限小于下限, 或者(上限温度-下限温度 < 2 )
-   * @retval 0xFE  // 温度上限小于临界值
+   * @retval 0xFD   温度上限小于下限, 或者(上限温度-下限温度 < 2 )
+   * @retval 0xFE   温度上限小于临界值
    * @retval 0xFF is register lock is not allowed to be modified
    */
   uint8_t setThreshold(float crit, float upper, float lower);
